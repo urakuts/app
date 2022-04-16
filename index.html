@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Кредитний калькулятор</h1>
+
+        <div></div>
+        <div>
+            <form action="#">
+                <p>
+                    <label for="userName">Як Вас звати?</label>
+                    <input type="text" id="userName" name="userName" value="Ваше ім'я">
+                </p>
+                
+                <p>
+                    <label for="rangeSumma"> Виберіть суму кредиту</label>
+                    <input type="range" id="rangeSumma" min="0" max="100000" step="5000" oninput="userSummaRange()">
+                    <input type="text" id="textSumma" value="50000" oninput="userSummaText()" >
+                </p>
+                <p>
+                    <label for="periodDate">Виберіть термін кредиту</label>
+                    <input type="range" id="periodDate" min="0" max="36" step="1" oninput="periodDateRange()">
+                    <input type="text" name="textDate" id="textDate" value="12" oninput="periodDateText()">
+                </p>
+                <p>
+                    <label for="payment">Ваш щомісячний платіж становить:</label>
+                    <output name="payment" id="payment"></output>
+                </p>
+                <p>
+                    <label for="rezult">Сума повернення на кінець періоду:</label>
+                    <output name="rezult" id="rezult" oninput="calcMonth()"></output>
+                </p>
+                <p>
+                    <input type="button" onclick="calcMonth(), calcYear()" value="Розрахувати">
+                </p>
+            
+
+            </form>
+        </div>
+    <script src="script.js"></script>
+    <script src="calc.js"></script>
+</body>
+</html>
